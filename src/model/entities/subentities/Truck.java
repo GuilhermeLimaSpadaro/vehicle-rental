@@ -6,39 +6,24 @@ import model.interfaces.VehicleInterface;
 
 public class Truck extends Vehicle implements VehicleInterface {
 
-	public Truck(String mark, String model, int year, double value, int doors, Engine engineType) {
-		super(mark, model, year, value, doors, engineType);
+	public Truck(int id, String mark, String model, int year, double value, int doors, Engine engine) {
+		super(id, mark, model, year, value, doors, engine);
 	}
-	
+
 	@Override
-	public void setRent(boolean rent) {
-		super.setRent(rent);
-	}
-	
-	@Override
-	public double ipvaSum() {
-		return super.ipvaSum();
-	}
-	
-	@Override
-	public boolean verifyCar() {
-		return super.verifyCar();
-	}
-	
-	@Override
-	public String showInfo() {
-		return "";
-	}
-	
-	@Override
-	public void rentVehicle(Vehicle vehicleRental) throws VehicleServiceException{
-	}
-	
-	@Override
-	public void addCar(Vehicle car) {
+	public void addCar(Vehicle car) throws VehicleServiceException {
 	}
 
 	@Override
 	public void removeCar(Vehicle car) {
+	}
+
+	@Override
+	public void rentVehicle(String vehicleRental) throws VehicleServiceException {
+	}
+	
+	@Override
+	public String showInfo() throws VehicleServiceException {	
+		return "";
 	}
 }

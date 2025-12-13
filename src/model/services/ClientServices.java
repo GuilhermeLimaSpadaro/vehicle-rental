@@ -10,11 +10,11 @@ import model.interfaces.ClientInterface;
 public class ClientServices implements ClientInterface {
 
 	List<Holder> holder = new ArrayList<Holder>();
-	
+
 	public ClientServices(List<Holder> holder) {
 		this.holder = holder;
 	}
-	
+
 	public ClientServices() {
 	}
 

@@ -22,15 +22,25 @@ public class VehicleServices implements VehicleInterface {
 		VehicleServices.vehicles = vehicles;
 	}
 
-	public void addCar(Vehicle car) {
-		vehicles.add(car);
+	public void addCar(Vehicle car) throws VehicleServiceException {
+
+		List<Integer> vehicleFound = new ArrayList<>();
+		for (Vehicle vehicle : vehicles) {
+			vehicleFound.add(vehicle.getID());
+		}
+
+		if (vehicleFound.contains(car.getID())) {
+			throw new VehicleServiceException("Veiculo ja cadastrado.");
+		} else {
+			vehicles.add(car);
+		}
 	}
 
 	public void removeCar(Vehicle car) {
 		vehicles.remove(car);
 	}
 
-	public void rentVehicle(Vehicle vehicleRental) throws VehicleServiceException {
+	public void rentVehicle(String vehicleRental) throws VehicleServiceException {
 		if (vehicles.isEmpty()) {
 			throw new VehicleServiceException("Nenhum carro cadastrado!");
 		}
@@ -38,7 +48,7 @@ public class VehicleServices implements VehicleInterface {
 		Vehicle found = null;
 
 		for (Vehicle vehicle : vehicles) {
-			if (vehicle.equals(vehicleRental)) {
+			if (vehicle.getModel() == vehicleRental) {
 				found = vehicle;
 				break;
 			}
@@ -55,16 +65,22 @@ public class VehicleServices implements VehicleInterface {
 		found.setRent(true);
 	}
 
-	public String showInfo() {
+	public String showInfo() throws VehicleServiceException {
+		if (vehicles.isEmpty()) {
+			throw new VehicleServiceException("Veiculo nao cadastrado!");
+		}
 		StringBuilder sb = new StringBuilder();
 		for (Vehicle vehicle : vehicles) {
-			sb.append("Marca: ").append(vehicle.getMark()).append("\n ").append("Modelo: ").append(vehicle.getModel())
+			sb.append(" Marca: ").append(vehicle.getMark()).append("\n ").append("Modelo: ").append(vehicle.getModel())
 					.append("\n ").append("Ano: ").append(vehicle.getYear()).append("\n ").append("Valor: ")
 					.append(vehicle.getValue()).append("\n ").append("Portas: ").append(vehicle.getDoors())
-					.append("\n ").append("Motor: ").append(vehicle.getEngine()).append("\n ").append("wHP: ")
-					.append(vehicle.getEngine()).append("\n ");
+					.append("\n ").append(vehicle.getEngine()).append("\n ");
 		}
 		return sb.toString();
+	}
+
+	public double sumIPVA(double value) {
+		return value * 0.00;
 	}
 
 }

@@ -1,9 +1,11 @@
 package model.entities;
 
 import model.entities.subentities.Engine;
+import model.exception.VehicleServiceException;
 
 public class Vehicle {
 
+	private int id;
 	private String mark;
 	private String model;
 	private int year;
@@ -15,8 +17,8 @@ public class Vehicle {
 	public Vehicle() {
 	}
 
-	public Vehicle(String mark, String model, int year, double value, int doors, Engine engine) {
-		super();
+	public Vehicle(int id, String mark, String model, int year, double value, int doors, Engine engine) {
+		this.id = id;
 		this.mark = mark;
 		this.model = model;
 		this.year = year;
@@ -25,14 +27,12 @@ public class Vehicle {
 		this.engine = engine;
 	}
 
-	public Vehicle(String mark, String model, int year, double value, int doors, Engine engineType, boolean rent) {
-		super();
-		this.mark = mark;
-		this.model = model;
-		this.year = year;
-		this.value = value;
-		this.doors = doors;
-		this.rent = rent;
+	public int getID() {
+		return id;
+	}
+
+	public void setID(int id) {
+		this.id = id;
 	}
 
 	public String getMark() {
@@ -99,7 +99,7 @@ public class Vehicle {
 		return rent;
 	}
 
-	public String showInfo() {
+	public String showInfo() throws VehicleServiceException {
 		return "";
 	}
 

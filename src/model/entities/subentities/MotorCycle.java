@@ -6,35 +6,25 @@ import model.interfaces.VehicleInterface;
 
 public class MotorCycle extends Vehicle implements VehicleInterface {
 
-	public MotorCycle(String mark, String model, int year, double value, int doors, Engine engine) {
-		super(mark, model, year, value, doors, engine);
+	public MotorCycle(int id, String mark, String model, int year, double value, int doors, Engine engine) {
+		super(id, mark, model, year, value, doors, engine);
 	}
 
-	public void setRent(boolean rent) {
-		super.setRent(rent);
-	}
-
-	public double ipvaSum() {
-		return super.getValue() * 0.02;
-	}
-
-	public boolean verifyCar() {
-		return super.verifyCar();
-	}
-
-	public boolean isRent(Vehicle motorClycle) {
-		return super.isRent();
-	}
-	
-	public void rentVehicle(Vehicle vehicleRental) throws VehicleServiceException{
-	}
-	
 	@Override
-	public void addCar(Vehicle car) {
+	public void addCar(Vehicle car) throws VehicleServiceException {
 	}
-	
+
 	@Override
 	public void removeCar(Vehicle car) {
+	}
+
+	@Override
+	public void rentVehicle(String vehicleRental) throws VehicleServiceException {
+	}
+	
+	@Override
+	public String showInfo() throws VehicleServiceException {
+		return "";
 	}
 
 }

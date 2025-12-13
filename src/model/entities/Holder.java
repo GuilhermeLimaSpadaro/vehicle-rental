@@ -25,4 +25,9 @@ public class Holder {
 		this.cpf = cpf;
 	}
 
+	@Override
+	public String toString() {
+		return "Nome: " + ", " + getName() + "CPF:";
+	}
+
 }
