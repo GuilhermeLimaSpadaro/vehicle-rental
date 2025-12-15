@@ -1,11 +1,10 @@
 package model.entities;
 
 import model.entities.subentities.Engine;
-import model.exception.VehicleServiceException;
 
 public class Vehicle {
 
-	private int id;
+	private int idVehicle;
 	private String mark;
 	private String model;
 	private int year;
@@ -17,8 +16,8 @@ public class Vehicle {
 	public Vehicle() {
 	}
 
-	public Vehicle(int id, String mark, String model, int year, double value, int doors, Engine engine) {
-		this.id = id;
+	public Vehicle(int idVehicle, String mark, String model, int year, double value, int doors, Engine engine) {
+		this.idVehicle = idVehicle;
 		this.mark = mark;
 		this.model = model;
 		this.year = year;
@@ -26,13 +25,24 @@ public class Vehicle {
 		this.doors = doors;
 		this.engine = engine;
 	}
-
-	public int getID() {
-		return id;
+	
+	public Vehicle(int idVehicle, String mark, String model, int year, double value, int doors, Engine engine, boolean rent) {
+		this.idVehicle = idVehicle;
+		this.mark = mark;
+		this.model = model;
+		this.year = year;
+		this.value = value;
+		this.doors = doors;
+		this.engine = engine;
+		this.rent = rent;
 	}
 
-	public void setID(int id) {
-		this.id = id;
+	public int getIdVehicle() {
+		return idVehicle;
+	}
+
+	public void setIdVehicle(int idVehicle) {
+		this.idVehicle = idVehicle;
 	}
 
 	public String getMark() {
@@ -98,9 +108,14 @@ public class Vehicle {
 	public boolean verifyCar() {
 		return rent;
 	}
-
-	public String showInfo() throws VehicleServiceException {
-		return "";
+	public String toString() {
+	    return "ID: " + getIdVehicle() +
+	           "\nMarca: " + getMark() +
+	           "\nModelo: " + getModel() +
+	           "\nAno: " + getYear() +
+	           "\nValor: " + getValue() +
+	           "\nPortas: " + getDoors() +
+	           "\n" + getEngine();
 	}
 
 }

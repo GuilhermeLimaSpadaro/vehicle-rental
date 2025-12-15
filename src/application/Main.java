@@ -19,12 +19,11 @@ public class Main {
 	public static void main(String[] args) throws DomainException, VehicleServiceException {
 		Locale.setDefault(Locale.US);
 		try (Scanner input = new Scanner(System.in)) {
-			Vehicle vehicleObj = new Vehicle();
 			VehicleInterface vehicleInterface = new VehicleServices();
 			ClientInterface clientInterface = new ClientServices();
 
 			System.out.println("Sejam bem vindo!");
-			int carMenu = 8;
+			int carMenu = 7;
 
 			while (carMenu != 0) {
 
@@ -35,13 +34,12 @@ public class Main {
 				System.out.println("4. Alugar veiculo.");
 				System.out.println("5. Mostre infomacoes do veiculo.");
 				System.out.println("6. Mostre informacoes do usuario.");
-				System.out.println("7. Calcular IPVA.");
 				System.out.println("0. Sair");
 				System.out.print("\nEscolha uma das opcoes: ");
 				carMenu = input.nextInt();
 				input.nextLine();
 
-				if (carMenu <= -0 && carMenu >= 8) {
+				if (carMenu <= -0 && carMenu >= 7) {
 					throw new DomainException("Opcao invalida, por favor tente novamente.");
 				}
 
@@ -166,17 +164,9 @@ public class Main {
 					break;
 				case 3:
 					System.out.println("Insira o veiculo que deseseja remover: ");
-
+				//*
 				case 4:
-					int rentalMenu = 4;
-					while (rentalMenu != 0) {
-
-						System.out.println("Escolha qual carro dejesa alugar.");
-						System.out.println("Digite o nome do carro dejesado: ");
-						String car = input.nextLine();
-						vehicleInterface.rentVehicle(car);
-					}
-
+				//*
 					break;
 				case 5:
 					System.out.println("Carregando.. \n");

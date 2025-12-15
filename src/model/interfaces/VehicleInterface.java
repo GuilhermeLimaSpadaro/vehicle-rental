@@ -9,7 +9,7 @@ public interface VehicleInterface {
 
 	public void removeCar(Vehicle car);
 
-	public void rentVehicle(String vehicleRental) throws VehicleServiceException;
+	public void rentVehicle(Vehicle vehicleRental) throws VehicleServiceException;
 	
 	public String showInfo() throws VehicleServiceException;
 

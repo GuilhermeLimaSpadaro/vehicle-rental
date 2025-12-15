@@ -1,30 +1,24 @@
 package model.entities.subentities;
 
 import model.entities.Vehicle;
-import model.exception.VehicleServiceException;
-import model.interfaces.VehicleInterface;
 
-public class MotorCycle extends Vehicle implements VehicleInterface {
+public class MotorCycle extends Vehicle{
 
-	public MotorCycle(int id, String mark, String model, int year, double value, int doors, Engine engine) {
-		super(id, mark, model, year, value, doors, engine);
+	public MotorCycle(int idVehicle, String mark, String model, int year, double value, int doors, Engine engine) {
+		super(idVehicle, mark, model, year, value, doors, engine);
 	}
 
-	@Override
-	public void addCar(Vehicle car) throws VehicleServiceException {
-	}
-
-	@Override
-	public void removeCar(Vehicle car) {
-	}
-
-	@Override
-	public void rentVehicle(String vehicleRental) throws VehicleServiceException {
+	public double sumIpva() {
+		return getValue()*0.04;
 	}
 	
 	@Override
-	public String showInfo() throws VehicleServiceException {
-		return "";
+	public String toString() {
+	    return "ID: " + getIdVehicle() +
+	           "\nMarca: " + getMark() +
+	           "\nModelo: " + getModel() +
+	           "\nAno: " + getYear() +
+	           "\nValor: " + getValue() +
+	           "\n" + getEngine();
 	}
-
 }
