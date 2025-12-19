@@ -21,6 +21,7 @@ public class Main {
 		try (Scanner input = new Scanner(System.in)) {
 			VehicleInterface vehicleInterface = new VehicleServices();
 			ClientInterface clientInterface = new ClientServices();
+			
 
 			System.out.println("Sejam bem vindo!");
 			int carMenu = 7;
@@ -164,9 +165,14 @@ public class Main {
 					break;
 				case 3:
 					System.out.println("Insira o veiculo que deseseja remover: ");
-				//*
+					String model = input.nextLine();
+					Vehicle remoVehicle = new Vehicle(model);
+					vehicleInterface.removeCar(remoVehicle);
 				case 4:
-				//*
+					System.out.println("Insira o veiculo que deseja alugar: ");
+					String rentalVehicle = input.nextLine();
+					Vehicle rentVehicle = new Vehicle(rentalVehicle);
+					vehicleInterface.rentVehicle(rentVehicle);
 					break;
 				case 5:
 					System.out.println("Carregando.. \n");

@@ -7,7 +7,7 @@ public interface VehicleInterface {
 
 	public void addCar(Vehicle car) throws VehicleServiceException;
 
-	public void removeCar(Vehicle car);
+	public void removeCar(Vehicle vehicle)throws VehicleServiceException;
 
 	public void rentVehicle(Vehicle vehicleRental) throws VehicleServiceException;
 	

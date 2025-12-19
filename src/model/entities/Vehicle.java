@@ -11,7 +11,7 @@ public class Vehicle {
 	private double value;
 	private int doors;
 	Engine engine;
-	private boolean rent;
+	private boolean rental;
 
 	public Vehicle() {
 	}
@@ -26,7 +26,7 @@ public class Vehicle {
 		this.engine = engine;
 	}
 	
-	public Vehicle(int idVehicle, String mark, String model, int year, double value, int doors, Engine engine, boolean rent) {
+	public Vehicle(int idVehicle, String mark, String model, int year, double value, int doors, Engine engine, boolean rental) {
 		this.idVehicle = idVehicle;
 		this.mark = mark;
 		this.model = model;
@@ -34,7 +34,15 @@ public class Vehicle {
 		this.value = value;
 		this.doors = doors;
 		this.engine = engine;
-		this.rent = rent;
+		this.rental = rental;
+	}
+	
+	public Vehicle(boolean rental) {
+		this.rental = rental;
+	}
+
+	public Vehicle(String model) {
+		this.model = model;
 	}
 
 	public int getIdVehicle() {
@@ -94,20 +102,17 @@ public class Vehicle {
 	}
 
 	public boolean isRent() {
-		return rent;
+		return rental;
 	}
 
 	public void setRent(boolean rent) {
-		this.rent = rent;
+		this.rental = rent;
 	}
 
 	public double ipvaSum() {
 		return getValue() * 0.00;
 	}
 
-	public boolean verifyCar() {
-		return rent;
-	}
 	public String toString() {
 	    return "ID: " + getIdVehicle() +
 	           "\nMarca: " + getMark() +

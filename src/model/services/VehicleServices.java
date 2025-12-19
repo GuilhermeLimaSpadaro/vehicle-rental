@@ -22,17 +22,25 @@ public class VehicleServices implements VehicleInterface {
 		this.vehicles = vehicles;
 	}
 
-	public void addCar(Vehicle addvehicle) throws VehicleServiceException {
-		for (Vehicle vehicle : vehicles) {
-			if (vehicle.getModel().equals(addvehicle.getModel())) {
+	public void addCar(Vehicle vehicle) throws VehicleServiceException {
+		for (Vehicle addVehicle : vehicles) {
+			if (addVehicle.getModel().equals(addVehicle.getModel())) {
 				throw new VehicleServiceException("Veiculo ja cadastrado.");
 			}
 		}
-		vehicles.add(addvehicle);
+		vehicles.add(vehicle);
 	}
 
-	public void removeCar(Vehicle vehicle) {
-		vehicles.remove(vehicle);
+	public void removeCar(Vehicle vehicle)throws VehicleServiceException {
+	
+		for (Vehicle remoVehicle : vehicles) {
+			if(remoVehicle.getModel().equals((remoVehicle.getModel()))){
+				throw new VehicleServiceException("Veiculo ja cadastrado!");
+			}
+		}
+		
+		removeCar(vehicle);
+	
 	}
 
 	public void rentVehicle(Vehicle vehicleRental) throws VehicleServiceException {
