@@ -1,0 +1,3 @@
+O Vehicle Rental System é um projeto em estágio inicial voltado para o desenvolvimento de uma plataforma de gerenciamento de locação de veículos. O foco atual está na arquitetura do sistema e na modelagem orientada a objetos, com a definição de classes como Vehicle, Car, Moto e Truck, além de um gerenciador de veículos centralizado.
+
+O projeto visa estabelecer uma base sólida utilizando herança, polimorfismo e boas práticas de programação, garantindo que futuras funcionalidades — como controle de reservas, clientes e histórico de locações — possam ser integradas de forma estruturada e eficiente.
