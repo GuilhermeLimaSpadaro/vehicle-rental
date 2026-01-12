@@ -26,6 +26,7 @@ public class ClientServices implements ClientInterface {
 		this.holder = holder;
 	}
 
+	@Override
 	public void register(String name, String cpf) throws ClientServiceException {
 
 		for (Holder h : holder) {
@@ -36,6 +37,7 @@ public class ClientServices implements ClientInterface {
 		holder.add(new Holder(name, cpf));
 	}
 
+	@Override
 	public String showInfo() {
 		String result = "";
 		for (Holder h : holder) {
@@ -43,5 +45,4 @@ public class ClientServices implements ClientInterface {
 		}
 		return result;
 	}
-
 }

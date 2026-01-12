@@ -1,5 +1,7 @@
 package model.entities;
 
+import java.util.Objects;
+
 public class Holder {
 	private String name;
 	private String cpf;
@@ -30,4 +32,20 @@ public class Holder {
 		return "Nome: " + ", " + getName() + "CPF:";
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(cpf, name);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Holder other = (Holder) obj;
+		return Objects.equals(cpf, other.cpf) && Objects.equals(name, other.name);
+	}
 }

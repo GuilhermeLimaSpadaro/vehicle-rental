@@ -112,16 +112,20 @@ public class Vehicle {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(idVehicle);
+		return Objects.hash(mark);
 	}
 
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null || getClass() != obj.getClass())
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
 			return false;
 		Vehicle other = (Vehicle) obj;
-		return idVehicle == other.idVehicle;
+		return Objects.equals(mark, other.mark);
 	}
+
+	
 }

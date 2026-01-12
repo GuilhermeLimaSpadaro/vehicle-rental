@@ -132,7 +132,7 @@ public class Main {
 							break;
 						case 3:
 							System.out.print("\nInsira os dados do caminhão: ");
-							System.out.println("ID: ");
+							System.out.print("Id: ");
 							int idTruck = input.nextInt();
 							input.nextLine();
 							System.out.print("Marca: ");
