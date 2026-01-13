@@ -34,6 +34,7 @@ public class Main {
 				System.out.println("4. Alugar veiculo.");
 				System.out.println("5. Mostre infomacoes do veiculo.");
 				System.out.println("6. Mostre informacoes do usuario.");
+				System.out.println("7. Buscar veiculo.");
 				System.out.println("0. Sair");
 				System.out.print("\nEscolha uma das opcoes: ");
 				carMenu = input.nextInt();
@@ -224,7 +225,7 @@ public class Main {
 					System.out.println(clientInterface.showInfo());
 					break;
 				case 7:
-					System.out.println("Insira o nome do carro que deseja achar: ");
+					System.out.println("Insira o nome do veiculo que deseja achar: ");
 					String name = input.next();
 					Vehicle v = vehicleInterface.findVehicle(name);
 					System.out.println(v);
