@@ -23,7 +23,7 @@ public class Main {
 			ClientInterface clientInterface = new ClientServices();
 
 			System.out.println("Sejam bem vindo!");
-			int carMenu = 7;
+			int carMenu = 8;
 
 			while (carMenu != 0) {
 
@@ -39,7 +39,7 @@ public class Main {
 				carMenu = input.nextInt();
 				input.nextLine();
 
-				if (carMenu <= -0 && carMenu >= 7) {
+				if (carMenu <= -0 && carMenu >= 8) {
 					throw new DomainException("Opcao invalida, por favor tente novamente.");
 				}
 
