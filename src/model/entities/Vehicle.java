@@ -17,17 +17,6 @@ public class Vehicle {
 	public Vehicle() {
 	}
 
-	public Vehicle(int idVehicle, String mark, String model, int year, double value, int doors, Engine engine) {
-		this.idVehicle = idVehicle;
-		this.mark = mark;
-		this.model = model;
-		this.year = year;
-		this.value = value;
-		this.doors = doors;
-		this.engine = engine;
-		this.rental = false;
-	}
-
 	public Vehicle(int idVehicle, String mark, String model, int year, double value, int doors, Engine engine,
 			boolean rental) {
 		this.idVehicle = idVehicle;
@@ -38,6 +27,16 @@ public class Vehicle {
 		this.doors = doors;
 		this.engine = engine;
 		this.rental = rental;
+	}
+
+	public Vehicle(int idVehicle, String mark, String model, int year, double value, int doors, Engine engine) {
+		this.idVehicle = idVehicle;
+		this.mark = mark;
+		this.model = model;
+		this.year = year;
+		this.value = value;
+		this.doors = doors;
+		this.engine = engine;
 	}
 
 	public int getIdVehicle() {
@@ -127,5 +126,4 @@ public class Vehicle {
 		return Objects.equals(mark, other.mark);
 	}
 
-	
 }

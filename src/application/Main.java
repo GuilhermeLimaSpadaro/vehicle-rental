@@ -223,6 +223,11 @@ public class Main {
 					System.out.println("Carregando.. \n");
 					System.out.println(clientInterface.showInfo());
 					break;
+				case 7:
+					System.out.println("Insira o nome do carro que deseja achar: ");
+					String name = input.next();
+					Vehicle v = vehicleInterface.findVehicle(name);
+					System.out.println(v);
 				case 0:
 					break;
 

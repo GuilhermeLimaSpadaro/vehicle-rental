@@ -59,6 +59,16 @@ public class VehicleServices implements VehicleInterface {
 
 		v.setRent(true);
 	}
+	
+	@Override
+	public Vehicle findVehicle(String vehicle) {
+		for(Vehicle v : vehicles) {
+			if (v.getModel().equalsIgnoreCase(vehicle)) {
+				 return v;
+			}
+		}
+		return null;
+	}
 
 	@Override
 	public String showInfo() throws VehicleServiceException {

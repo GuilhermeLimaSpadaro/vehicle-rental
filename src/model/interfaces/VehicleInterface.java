@@ -12,5 +12,7 @@ public interface VehicleInterface {
 	public void rentVehicle(Vehicle vehicleRental) throws VehicleServiceException;
 	
 	public String showInfo() throws VehicleServiceException;
+	
+	public Vehicle findVehicle(String vehicle);
 
 }
