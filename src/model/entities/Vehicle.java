@@ -1,5 +1,7 @@
 package model.entities;
 
+import java.util.Objects;
+
 import model.unums.Categories;
 
 public class Vehicle {
@@ -57,5 +59,22 @@ public class Vehicle {
 		return "ID: " + id + " | Modelo: " + model + " | Marca: " + mark + " | Preco: " + price + " | Placa: " + plate
 				+ " | Aluguel: " + rented + " | Categoria: " + categories + "\n";
 	}
-	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, model, plate);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Vehicle other = (Vehicle) obj;
+		return Objects.equals(id, other.id) && Objects.equals(model, other.model) && Objects.equals(plate, other.plate);
+	}
+
 }

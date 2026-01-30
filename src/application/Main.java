@@ -28,13 +28,25 @@ public class Main {
 					addClient(input, clientRepo);
 					break;
 				case 2:
-					
+					removeClient(input, clientRepo);
 					break;
 				case 3:
-					addVehicle(input, vehicleRepo);
+
 					break;
 				case 4:
 					
+					break;
+				case 5:
+					addVehicle(input, vehicleRepo);
+					break;
+				case 6:
+					removeVehicle(input, vehicleRepo);
+					break;
+				case 7:
+					break;
+				case 8:
+					break;
+				case 0:
 					break;
 				}
 			}
@@ -49,9 +61,13 @@ public class Main {
 				"=========================\r\n" + "       MENU PRINCIPAL\r\n" + "=========================\r\n" + "");
 		System.out.println("1. Cadastrar cliente.");
 		System.out.println("2. Remover cliente.");
-		System.out.println("3. Cadastrar veiculo.");
-		System.out.println("4. Remover veiculo.");
-		System.out.println("5. Alugar veiculo.");
+		System.out.println("3. Buscar cliente.");
+		System.out.println("4. Listar clientes.");
+		System.out.println("5. Cadastrar veiculo.");
+		System.out.println("6. Remover veiculo.");
+		System.out.println("7. Buscar veiculo.");
+		System.out.println("8. Listar veiculos");
+		System.out.println("0. Sair.");
 		System.out.print("\n Escolha uma das opcoes acima: ");
 	}
 
@@ -105,7 +121,13 @@ public class Main {
 		System.out.println("Categoria: ");
 		Categories categories = validationEnum(input);
 		Vehicle vehicle = new Vehicle(id, model, mark, price, plate, false, categories);
-		vehicleRepo.add(vehicle);
+		vehicleRepo.addVehicle(vehicle);
+	}
+	
+	public static void removeVehicle(Scanner input, VehicleInterface vehicleRepo) throws VehicleException {
+		System.out.print("Por favor, insira o modelo do carro que deseja remover: ");
+		String model = input.nextLine();
+		vehicleRepo.removeVehicle(model);
 	}
 
 	public static void addClient(Scanner input, ClientInterface clientRepo) throws ClientException {
@@ -120,5 +142,11 @@ public class Main {
 		String phone = input.nextLine();
 		Client client = new Client(id, name, document, phone);
 		clientRepo.add(client);
+	}
+	
+	public static void removeClient(Scanner input, ClientInterface clientRepo) throws ClientException {
+		System.out.println("Por favor, insira o nome que deseja remover: ");
+		String name = input.nextLine();
+		clientRepo.removeClient(name);
 	}
 }

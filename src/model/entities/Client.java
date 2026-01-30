@@ -1,8 +1,10 @@
 package model.entities;
 
+import java.util.Objects;
+
 public class Client {
 
-	private int id;
+	private Integer id;
 	private String name;
 	private String document;
 	private String phone;
@@ -14,11 +16,9 @@ public class Client {
 		this.phone = phone;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-
-
 
 	public String getName() {
 		return name;
@@ -36,4 +36,22 @@ public class Client {
 	public String toString() {
 		return "Cliente | ID: " + id + "| Nome: " + name + "| Documento: " + document + "| Telefone: " + phone + "\n";
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, name);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Client other = (Client) obj;
+		return id == other.id && Objects.equals(name, other.name);
+	}
+
 }
